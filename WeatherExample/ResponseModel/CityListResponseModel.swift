@@ -108,7 +108,7 @@ struct Imperial : Mappable {
 
 struct CityListResponseModel : Mappable {
     var version : Int?
-    var key : String?
+    var Key : String?
     var type : String?
     var rank : Int?
     var localizedName : String?
@@ -130,7 +130,7 @@ struct CityListResponseModel : Mappable {
     mutating func mapping(map: Map) {
 
         version <- map["Version"]
-        key <- map["key"]
+        Key <- map["Key"]
         type <- map["Type"]
         rank <- map["Rank"]
         localizedName <- map["LocalizedName"]

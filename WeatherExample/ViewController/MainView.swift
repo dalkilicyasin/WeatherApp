@@ -11,6 +11,7 @@ import UIKit
 class MainView : UIView {
     @IBOutlet weak var viewHeader: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var labelCityList: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +20,7 @@ class MainView : UIView {
         self.searchBar.layer.cornerRadius = 10
         self.searchBar.compatibleSearchTextField.textColor = UIColor.black
         self.searchBar.compatibleSearchTextField.backgroundColor = UIColor.white
+        self.labelCityList.isHidden = true
      
     }
     

@@ -12,10 +12,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var viewSearchHistoryView: SearchHistoryView!
+    @IBOutlet var viewMainView: MainView!
+    var cityName = ""
     var cityNameList : [CityListResponseModel] = []
     var searchHistoryList : [String] = []
     var isFilteredTextEmpty = true
     var keyWord = ""
+    var cityCode = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +35,6 @@ class MainViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         
     }
-    
 }
 
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
@@ -46,6 +48,19 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         cell.localized = self.cityNameList[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.cityName = self.cityNameList[indexPath.row].administrativeArea?.localizedName ?? ""
+        self.cityCode = self.cityNameList[indexPath.row].Key ?? ""
+        let foreCastRequestModel = ForeCastRequestModel.init(cityCode: self.cityCode)
+        NetworkManager.sendGetRequest(url:NetworkManager.BASEURL, endPoint: .ForeCast, method: .get, parameters: foreCastRequestModel.requestPathString()) { (response : ForeCastResponseModel ) in
+              
+            if response.DailyForecasts != nil {
+                self.weatherPushViewController(viewController: WeatherDetailViewController(weatherCondition: response, cityName: self.cityName))
+                  
+              }
+          }
+    }
 }
 
 extension MainViewController : UISearchBarDelegate {
@@ -57,11 +72,12 @@ extension MainViewController : UISearchBarDelegate {
             self.tableView.reloadData()
             self.tableView.isHidden = true
             self.viewSearchHistoryView.isHidden = false
+            self.viewMainView.labelCityList.isHidden = true
         }else {
             self.viewSearchHistoryView.isHidden = true
             self.tableView.isHidden = false
             self.isFilteredTextEmpty = false
-           
+            self.viewMainView.labelCityList.isHidden = false
                 if searchText.description.lowercased().contains(searchText.lowercased()){
                     self.keyWord = searchText
                     let requestSearchText =  SearchLocationRequestModel.init(searchText: self.keyWord)

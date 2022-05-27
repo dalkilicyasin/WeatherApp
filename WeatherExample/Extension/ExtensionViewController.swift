@@ -89,17 +89,17 @@ extension UIViewController {
         return BaseApiRequestBody.init(data: data)
     }
     
-    func otiPushViewController(identifier : String, animated: Bool = true) {
+    func weatherPushViewController(identifier : String, animated: Bool = true) {
         let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: identifier)
-        self.otiPushViewController(viewController: viewController, animated: animated)
+        self.weatherPushViewController(viewController: viewController, animated: animated)
     }
     
-    func otiPresentViewController(viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+    func weatherPresentViewController(viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
         self.present(viewController, animated: animated, completion: completion)
     }
     
-    func otiPushViewController(viewController: UIViewController, animated: Bool = true) {
+    func weatherPushViewController(viewController: UIViewController, animated: Bool = true) {
         self.navigationController?.pushViewController(viewController, animated: animated)
     }
 }

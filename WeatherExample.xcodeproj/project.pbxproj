@@ -39,6 +39,11 @@
 		D992A54828410A7D0019F217 /* SearchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992A54728410A7D0019F217 /* SearchHistoryView.swift */; };
 		D992A54A28410A8E0019F217 /* SearchHistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D992A54928410A8E0019F217 /* SearchHistoryView.xib */; };
 		D992A54C28410CBE0019F217 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992A54B28410CBE0019F217 /* ExtensionUIView.swift */; };
+		D992A54F28411ECD0019F217 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992A54D28411ECD0019F217 /* WeatherDetailViewController.swift */; };
+		D992A55028411ECD0019F217 /* WeatherDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D992A54E28411ECD0019F217 /* WeatherDetailViewController.xib */; };
+		D992A55228411EDC0019F217 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992A55128411EDC0019F217 /* WeatherDetailView.swift */; };
+		D992A55428416AAD0019F217 /* ForeCastResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992A55328416AAD0019F217 /* ForeCastResponseModel.swift */; };
+		D992A55628416BAD0019F217 /* ForeCastRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992A55528416BAD0019F217 /* ForeCastRequestModel.swift */; };
 		E9710770D83F8A77601680A5 /* Pods_WeatherExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87B3F6795F4778F0599377A /* Pods_WeatherExampleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +106,11 @@
 		D992A54728410A7D0019F217 /* SearchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.swift; sourceTree = "<group>"; };
 		D992A54928410A8E0019F217 /* SearchHistoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryView.xib; sourceTree = "<group>"; };
 		D992A54B28410CBE0019F217 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
+		D992A54D28411ECD0019F217 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
+		D992A54E28411ECD0019F217 /* WeatherDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherDetailViewController.xib; sourceTree = "<group>"; };
+		D992A55128411EDC0019F217 /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
+		D992A55328416AAD0019F217 /* ForeCastResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeCastResponseModel.swift; sourceTree = "<group>"; };
+		D992A55528416BAD0019F217 /* ForeCastRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeCastRequestModel.swift; sourceTree = "<group>"; };
 		E1D7EBA76238ACFD9F9D0E5B /* Pods_WeatherExample_WeatherExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherExample_WeatherExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE53F4A341C0DF40D17E2B8 /* Pods-WeatherExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherExampleTests.release.xcconfig"; path = "Target Support Files/Pods-WeatherExampleTests/Pods-WeatherExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +230,9 @@
 				D992A4D92840063F0019F217 /* MainViewController.swift */,
 				D992A513284007B50019F217 /* MainView.swift */,
 				D992A4DB2840063F0019F217 /* Main.storyboard */,
+				D992A54D28411ECD0019F217 /* WeatherDetailViewController.swift */,
+				D992A55128411EDC0019F217 /* WeatherDetailView.swift */,
+				D992A54E28411ECD0019F217 /* WeatherDetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -229,6 +242,7 @@
 			children = (
 				D992A51828400B540019F217 /* CityListResponseModel.swift */,
 				D992A51728400B540019F217 /* GetTokenResponseModel.swift */,
+				D992A55328416AAD0019F217 /* ForeCastResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 			children = (
 				D992A51528400B3E0019F217 /* TopCitysRequestModel.swift */,
 				D992A5442840C7F50019F217 /* SearchLocationRequestModel.swift */,
+				D992A55528416BAD0019F217 /* ForeCastRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -407,6 +422,7 @@
 				D992A54A28410A8E0019F217 /* SearchHistoryView.xib in Resources */,
 				D992A4DF284006400019F217 /* Assets.xcassets in Resources */,
 				D992A53A28409A3F0019F217 /* MainTableViewCell.xib in Resources */,
+				D992A55028411ECD0019F217 /* WeatherDetailViewController.xib in Resources */,
 				D992A4DD2840063F0019F217 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,15 +551,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D992A55228411EDC0019F217 /* WeatherDetailView.swift in Sources */,
+				D992A55428416AAD0019F217 /* ForeCastResponseModel.swift in Sources */,
 				D992A51A28400B540019F217 /* CityListResponseModel.swift in Sources */,
 				D992A52428400B7D0019F217 /* ServiceEndPoint.swift in Sources */,
 				D992A54C28410CBE0019F217 /* ExtensionUIView.swift in Sources */,
 				D992A53028400B950019F217 /* ExtensionViewController.swift in Sources */,
 				D992A53428401BE70019F217 /* ExtensionSearchBar.swift in Sources */,
 				D992A5452840C7F60019F217 /* SearchLocationRequestModel.swift in Sources */,
+				D992A54F28411ECD0019F217 /* WeatherDetailViewController.swift in Sources */,
 				D992A54828410A7D0019F217 /* SearchHistoryView.swift in Sources */,
 				D992A52F28400B950019F217 /* ExtensionUIApplication.swift in Sources */,
 				D992A4DA2840063F0019F217 /* MainViewController.swift in Sources */,
+				D992A55628416BAD0019F217 /* ForeCastRequestModel.swift in Sources */,
 				D992A5432840BB540019F217 /* BaseApiRequestBody.swift in Sources */,
 				D992A51628400B3E0019F217 /* TopCitysRequestModel.swift in Sources */,
 				D992A52628400B7D0019F217 /* NetworkManager.swift in Sources */,

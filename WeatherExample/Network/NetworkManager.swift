@@ -223,8 +223,11 @@ public class NetworkManager {
             var requestModel = URLRequest(url: URL(string: urlPath)!)
             requestModel.timeoutInterval = TIMEOUT_INTERVAL
             requestModel.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            requestModel.setValue("bearer \(baseData.getTokenResponse?.access_token ?? "")", forHTTPHeaderField: "Authorization")
+           // requestModel.setValue("bearer \(baseData.getTokenResponse?.access_token ?? "")", forHTTPHeaderField: "Authorization")
             requestModel.httpMethod = method.rawValue
+            requestModel.setValue("*/*", forHTTPHeaderField: "Accept")
+            requestModel.setValue("gzip", forHTTPHeaderField: "Accept-Encoding")
+            requestModel.setValue("en-US", forHTTPHeaderField: "Accept-Language")
 
             
             let request = requestModel
