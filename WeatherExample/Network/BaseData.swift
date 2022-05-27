@@ -13,6 +13,6 @@ public class BaseData{
     
     public init(){}
     var getTokenResponse:GetTokenResponseModel?
-    var apiKey = "lLNA4gX36SBR91NuHj7YJXuY1b1PGNRx"
+    var apiKey = "3lSSt8AQEYGHCSN29AgVpl6h4CYyR9Uk"
     
 }

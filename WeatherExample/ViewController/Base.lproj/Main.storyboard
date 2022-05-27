@@ -52,6 +52,7 @@
                             <constraint firstAttribute="bottom" secondItem="UT3-BL-kkG" secondAttribute="bottom" id="pfc-Qh-YmT"/>
                         </constraints>
                         <connections>
+                            <outlet property="searchBar" destination="lLL-Nl-gFv" id="xVY-6f-P3w"/>
                             <outlet property="viewHeader" destination="JY4-64-BJs" id="QzA-Ue-tMo"/>
                         </connections>
                     </view>

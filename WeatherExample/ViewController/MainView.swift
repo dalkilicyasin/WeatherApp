@@ -10,9 +10,15 @@ import UIKit
 
 class MainView : UIView {
     @IBOutlet weak var viewHeader: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.searchBar.setImage(UIImage(), for: .search, state: .normal)
+        self.searchBar.layer.cornerRadius = 10
+        self.searchBar.compatibleSearchTextField.textColor = UIColor.black
+        self.searchBar.compatibleSearchTextField.backgroundColor = UIColor.white
      
     }
     

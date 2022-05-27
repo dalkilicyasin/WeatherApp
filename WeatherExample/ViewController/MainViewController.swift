@@ -19,12 +19,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.searchBar.setImage(UIImage(), for: .search, state: .normal)
-        self.searchBar.layer.cornerRadius = 10
-        self.searchBar.compatibleSearchTextField.textColor = UIColor.white
-        self.searchBar.compatibleSearchTextField.backgroundColor = UIColor.black
         self.searchBar.delegate = self
-        
+    
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(MainTableViewCell.nib, forCellReuseIdentifier: MainTableViewCell.identifier)
@@ -33,16 +29,6 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.hideKeyboardWhenTappedAround()
-       
-      let requestLocation =  TopCitysRequestModel()
-        NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .TopCitiyList, method: .get, parameters: requestLocation.requestPathString()) { (response : [CityListResponseModel] ) in
-            
-            if response.count > 0 {
-                self.cityNameList = response
-            }
-            
-            self.tableView.reloadData()
-        }
     }
 }
 
@@ -53,11 +39,10 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier) as! MainTableViewCell
-        cell.labelCityName.text = self.cityNameList[indexPath.row].localizedName ?? ""
+        cell.labelCityName.text = self.cityNameList[indexPath.row].administrativeArea?.localizedName ?? ""
+        cell.localized = self.cityNameList[indexPath.row]
         return cell
     }
-    
-    
 }
 
 extension MainViewController : UISearchBarDelegate {
@@ -65,6 +50,8 @@ extension MainViewController : UISearchBarDelegate {
        
         if searchText.elementsEqual(""){
             self.isFilteredTextEmpty = true
+            self.cityNameList = []
+            self.tableView.reloadData()
             
         }else {
            
@@ -72,27 +59,21 @@ extension MainViewController : UISearchBarDelegate {
            
                 if searchText.description.lowercased().contains(searchText.lowercased()){
                     self.keyWord = searchText
+                    let requestSearchText =  SearchLocationRequestModel.init(searchText: self.keyWord)
+                    NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .SearchCitys, method: .get, parameters: requestSearchText.requestPathString()) { (response : [CityListResponseModel] ) in
+                          
+                          if response.count > 0 {
+                              self.cityNameList = response
+                              self.tableView.reloadData()
+                          }
+                      }
                 }
-            
         }
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        let requestLocation =  TopCitysRequestModel()
-          NetworkManager.sendGetRequestArray(url:NetworkManager.BASEURL, endPoint: .TopCitiyList, method: .get, parameters: requestLocation.requestPathString()) { (response : [CityListResponseModel] ) in
-              
-              if response.count > 0 {
-                  
-                  
-              }
-          }
-       
-        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)  {
         searchBar.resignFirstResponder()
-        print(keyWord)
+        print(self.keyWord)
     }
 }
 

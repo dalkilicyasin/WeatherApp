@@ -12,6 +12,7 @@ class MainTableViewCell: UITableViewCell {
     class var identifier: String { return String(describing: self) }
     class var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
     @IBOutlet weak var labelCityName: UILabel!
+    var localized : CityListResponseModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()

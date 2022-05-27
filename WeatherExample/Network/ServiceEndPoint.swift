@@ -11,4 +11,5 @@ import Foundation
 public enum ServiceEndPoint: String {
     case TopCitiyList = "/locations/v1/topcities/150"
     case ForeCast = "/forecasts/v1/daily/5day"
+    case SearchCitys = "/locations/v1/cities/search"
 }
