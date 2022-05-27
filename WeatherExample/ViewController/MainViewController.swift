@@ -9,13 +9,14 @@ import UIKit
 import Foundation
 
 class MainViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var viewSearchHistoryView: SearchHistoryView!
     var cityNameList : [CityListResponseModel] = []
-    
+    var searchHistoryList : [String] = []
     var isFilteredTextEmpty = true
     var keyWord = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,7 +30,9 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.hideKeyboardWhenTappedAround()
+        
     }
+    
 }
 
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
@@ -52,9 +55,11 @@ extension MainViewController : UISearchBarDelegate {
             self.isFilteredTextEmpty = true
             self.cityNameList = []
             self.tableView.reloadData()
-            
+            self.tableView.isHidden = true
+            self.viewSearchHistoryView.isHidden = false
         }else {
-           
+            self.viewSearchHistoryView.isHidden = true
+            self.tableView.isHidden = false
             self.isFilteredTextEmpty = false
            
                 if searchText.description.lowercased().contains(searchText.lowercased()){
@@ -74,6 +79,14 @@ extension MainViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)  {
         searchBar.resignFirstResponder()
         print(self.keyWord)
+        if self.searchHistoryList.count == 6 {
+            self.searchHistoryList.remove(at: 0)
+        }
+        self.searchHistoryList.append(self.keyWord)
+        self.viewSearchHistoryView.searchHistoryList = self.searchHistoryList
+        self.viewSearchHistoryView.tableView.reloadData()
+        self.keyWord = ""
     }
 }
+
 

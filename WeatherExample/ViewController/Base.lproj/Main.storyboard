@@ -39,17 +39,27 @@
                                 <rect key="frame" x="0.0" y="128" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00o-z5-PQU" customClass="SearchHistoryView" customModule="WeatherExample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="414" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="tOr-yh-RHC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="00o-z5-PQU" secondAttribute="trailing" id="16O-c0-vSZ"/>
                             <constraint firstItem="JY4-64-BJs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="I97-2c-9KU"/>
                             <constraint firstItem="UT3-BL-kkG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L3h-IX-HZ3"/>
+                            <constraint firstItem="00o-z5-PQU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Osq-Iz-X6w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JY4-64-BJs" secondAttribute="trailing" id="R3z-gH-RWG"/>
                             <constraint firstItem="JY4-64-BJs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fQ8-Lk-762"/>
                             <constraint firstAttribute="trailing" secondItem="UT3-BL-kkG" secondAttribute="trailing" id="ned-qO-stz"/>
                             <constraint firstItem="UT3-BL-kkG" firstAttribute="top" secondItem="JY4-64-BJs" secondAttribute="bottom" id="nul-EG-T13"/>
                             <constraint firstAttribute="bottom" secondItem="UT3-BL-kkG" secondAttribute="bottom" id="pfc-Qh-YmT"/>
+                            <constraint firstItem="00o-z5-PQU" firstAttribute="top" secondItem="JY4-64-BJs" secondAttribute="bottom" id="ulq-bh-mG9"/>
                         </constraints>
                         <connections>
                             <outlet property="searchBar" destination="lLL-Nl-gFv" id="xVY-6f-P3w"/>
@@ -59,6 +69,7 @@
                     <connections>
                         <outlet property="searchBar" destination="lLL-Nl-gFv" id="QQ8-sa-dsj"/>
                         <outlet property="tableView" destination="UT3-BL-kkG" id="6iz-L9-j3m"/>
+                        <outlet property="viewSearchHistoryView" destination="00o-z5-PQU" id="XQC-30-iwN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
