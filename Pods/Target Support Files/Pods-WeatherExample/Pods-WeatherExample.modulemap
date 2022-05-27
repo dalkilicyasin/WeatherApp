@@ -1,0 +1,6 @@
+framework module Pods_WeatherExample {
+  umbrella header "Pods-WeatherExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
