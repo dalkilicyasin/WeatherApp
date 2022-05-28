@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyLocationViewController" customModule="WeatherExample" customModuleProvider="target">
+            <connections>
+                <outlet property="labelCityName" destination="aA1-6E-8im" id="jy6-Mf-Ejr"/>
+                <outlet property="labelDayly" destination="R6Z-Lp-fov" id="fXe-gd-QKU"/>
+                <outlet property="labelMAxTemp" destination="sca-Lu-fsi" id="5eh-dI-BhQ"/>
+                <outlet property="labelMinTemp" destination="Pgz-yU-X0F" id="rN1-3F-HPG"/>
+                <outlet property="labelNight" destination="MTf-wf-Ha0" id="eQm-vX-XnF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA1-6E-8im">
+                    <rect key="frame" x="10" y="123" width="394" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="HdF-fI-34X"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night Commit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTf-wf-Ha0">
+                    <rect key="frame" x="20" y="568" width="374" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="wEy-Tg-Vv4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" systemColor="systemGreenColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Tempature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sca-Lu-fsi">
+                    <rect key="frame" x="20" y="268" width="374" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="T3b-cV-56d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" systemColor="systemGreenColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lowest Tempature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgz-yU-X0F">
+                    <rect key="frame" x="20" y="368" width="374" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="DnQ-Mh-5eL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" systemColor="systemGreenColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day Commit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6Z-Lp-fov">
+                    <rect key="frame" x="20" y="468" width="374" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="3fT-5C-WSZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" systemColor="systemGreenColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJd-dv-2Mb">
+                    <rect key="frame" x="20" y="63" width="100" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Tz5-4z-de9"/>
+                        <constraint firstAttribute="height" constant="30" id="sQU-FX-i38"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemGreenColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="&lt; Back">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="g2V-MN-iVH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5i-dU-Edv">
+                    <rect key="frame" x="60" y="668" width="294" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="D4D-yR-Adh"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Refresh Page">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="23"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="refreshButtonTapped:" destination="-1" eventType="touchUpInside" id="fEU-9n-BH7"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aA1-6E-8im" secondAttribute="trailing" constant="10" id="3Bu-sJ-k6L"/>
+                <constraint firstItem="mJd-dv-2Mb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="63" id="B80-Ap-Ixm"/>
+                <constraint firstItem="sca-Lu-fsi" firstAttribute="top" secondItem="aA1-6E-8im" secondAttribute="bottom" constant="95" id="Cnb-2H-uoj"/>
+                <constraint firstAttribute="trailing" secondItem="MTf-wf-Ha0" secondAttribute="trailing" constant="20" id="FmM-0F-VkV"/>
+                <constraint firstItem="MTf-wf-Ha0" firstAttribute="top" secondItem="R6Z-Lp-fov" secondAttribute="bottom" constant="50" id="GXd-pT-uLB"/>
+                <constraint firstItem="R6Z-Lp-fov" firstAttribute="top" secondItem="Pgz-yU-X0F" secondAttribute="bottom" constant="50" id="IuV-uH-IEA"/>
+                <constraint firstAttribute="trailing" secondItem="Pgz-yU-X0F" secondAttribute="trailing" constant="20" id="KrA-T1-OVL"/>
+                <constraint firstItem="aA1-6E-8im" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="123" id="OgQ-Io-wWZ"/>
+                <constraint firstItem="aA1-6E-8im" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Os9-xt-JNG"/>
+                <constraint firstItem="Pgz-yU-X0F" firstAttribute="top" secondItem="sca-Lu-fsi" secondAttribute="bottom" constant="50" id="Uzf-kI-MDq"/>
+                <constraint firstItem="mJd-dv-2Mb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="VBi-zG-toN"/>
+                <constraint firstItem="Pgz-yU-X0F" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="VOE-eO-LsX"/>
+                <constraint firstItem="sca-Lu-fsi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="a7W-H5-SL0"/>
+                <constraint firstItem="MTf-wf-Ha0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="dQB-iL-HxV"/>
+                <constraint firstItem="n5i-dU-Edv" firstAttribute="top" secondItem="MTf-wf-Ha0" secondAttribute="bottom" constant="50" id="dUd-dh-6Cm"/>
+                <constraint firstAttribute="trailing" secondItem="R6Z-Lp-fov" secondAttribute="trailing" constant="20" id="dui-br-Gcw"/>
+                <constraint firstItem="n5i-dU-Edv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="fRy-ac-XcU"/>
+                <constraint firstItem="R6Z-Lp-fov" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ftG-av-4dg"/>
+                <constraint firstAttribute="trailing" secondItem="sca-Lu-fsi" secondAttribute="trailing" constant="20" id="gin-4a-Fyk"/>
+                <constraint firstAttribute="trailing" secondItem="n5i-dU-Edv" secondAttribute="trailing" constant="60" id="nTl-9l-sfX"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="70.982142857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

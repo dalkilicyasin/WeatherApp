@@ -35,6 +35,11 @@ class MainViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         
     }
+    
+    @IBAction func CurrentWeatherButtonTapped(_ sender: Any) {
+        self.weatherPushViewController(viewController: MyLocationViewController())
+    }
+    
 }
 
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
@@ -73,11 +78,13 @@ extension MainViewController : UISearchBarDelegate {
             self.tableView.isHidden = true
             self.viewSearchHistoryView.isHidden = false
             self.viewMainView.labelCityList.isHidden = true
+            self.viewMainView.labelCurrentLocation.isHidden = false
         }else {
             self.viewSearchHistoryView.isHidden = true
             self.tableView.isHidden = false
             self.isFilteredTextEmpty = false
             self.viewMainView.labelCityList.isHidden = false
+            self.viewMainView.labelCurrentLocation.isHidden = true
                 if searchText.description.lowercased().contains(searchText.lowercased()){
                     self.keyWord = searchText
                     let requestSearchText =  SearchLocationRequestModel.init(searchText: self.keyWord)

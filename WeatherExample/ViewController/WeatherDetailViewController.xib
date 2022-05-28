@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -56,7 +57,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fh-ad-0Vf">
-                    <rect key="frame" x="20" y="40" width="100" height="30"/>
+                    <rect key="frame" x="20" y="50" width="100" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="gOl-DY-ChC"/>
@@ -87,7 +88,7 @@
                 <constraint firstAttribute="trailing" secondItem="Mdg-Qf-oyn" secondAttribute="trailing" constant="10" id="34p-ro-9S2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YoW-6W-bTI" secondAttribute="trailing" constant="20" id="H9S-pC-xGr"/>
                 <constraint firstItem="YoW-6W-bTI" firstAttribute="top" secondItem="b4a-Cx-1zy" secondAttribute="bottom" constant="50" id="I4z-1r-esP"/>
-                <constraint firstItem="1fh-ad-0Vf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="Izp-Sg-ZOQ"/>
+                <constraint firstItem="1fh-ad-0Vf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="Izp-Sg-ZOQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b4a-Cx-1zy" secondAttribute="trailing" constant="20" id="S0c-XL-Mwc"/>
                 <constraint firstItem="TJG-gg-NeX" firstAttribute="top" secondItem="C1t-bN-a0t" secondAttribute="bottom" constant="50" id="T3V-id-rtL"/>
                 <constraint firstItem="C1t-bN-a0t" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UZ4-CE-gCj"/>

@@ -2,11 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Application requires user’s location for better user experience.</string>
+
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Application requires user’s location for better user experience.</string>
+
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Application requires user’s location for better user experience.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsUsageDescription</key>
+		<dict/>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -12,6 +12,7 @@ class MainView : UIView {
     @IBOutlet weak var viewHeader: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var labelCityList: UILabel!
+    @IBOutlet weak var labelCurrentLocation: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
