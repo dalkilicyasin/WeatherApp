@@ -36,8 +36,21 @@ class MainViewController: UIViewController {
         
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.searchHistoryUpdate()
+    }
+    
     @IBAction func CurrentWeatherButtonTapped(_ sender: Any) {
         self.weatherPushViewController(viewController: MyLocationViewController())
+    }
+    
+    func searchHistoryUpdate(){
+        if  self.searchHistoryList.count == 6 {
+            self.searchHistoryList.remove(at: 0)
+        }
+        self.viewSearchHistoryView.searchHistoryList = self.searchHistoryList
+        self.viewSearchHistoryView.tableView.reloadData()
     }
     
 }
@@ -62,7 +75,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
               
             if response.DailyForecasts != nil {
                 self.weatherPushViewController(viewController: WeatherDetailViewController(weatherCondition: response, cityName: self.cityName))
-                  
+                
               }
           }
     }
@@ -102,12 +115,13 @@ extension MainViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)  {
         searchBar.resignFirstResponder()
         print(self.keyWord)
-        if self.searchHistoryList.count == 6 {
-            self.searchHistoryList.remove(at: 0)
+        if self.searchHistoryList.count > 0 {
+            if let insideIndex = self.searchHistoryList.firstIndex(where: {$0 == self.keyWord}){
+                self.searchHistoryList.remove(at: insideIndex)
+            }
         }
-        self.searchHistoryList.append(self.keyWord)
-        self.viewSearchHistoryView.searchHistoryList = self.searchHistoryList
-        self.viewSearchHistoryView.tableView.reloadData()
+        self.searchHistoryList.append(keyWord)
+        self.searchHistoryUpdate()
         self.keyWord = ""
     }
 }
