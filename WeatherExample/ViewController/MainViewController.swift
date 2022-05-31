@@ -52,7 +52,6 @@ class MainViewController: UIViewController {
         self.viewSearchHistoryView.searchHistoryList = self.searchHistoryList
         self.viewSearchHistoryView.tableView.reloadData()
     }
-    
 }
 
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
