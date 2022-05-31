@@ -33,7 +33,6 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.hideKeyboardWhenTappedAround()
-        
     }
     
     
