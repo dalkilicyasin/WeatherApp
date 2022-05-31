@@ -73,7 +73,6 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
               
             if response.DailyForecasts != nil {
                 self.weatherPushViewController(viewController: WeatherDetailViewController(weatherCondition: response, cityName: self.cityName))
-                
               }
           }
     }
