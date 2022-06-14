@@ -20,7 +20,6 @@ class WeatherDetailViewController: UIViewController {
         self.viewWeatherDetailView.labelLowestTempature.text = "Lowest Tempature : \(self.weatherCondition?.DailyForecasts?[0].temperature?.minimum?.value ?? 0.0)F"
         self.viewWeatherDetailView.labelDayCommit.text = "Dayly : \(self.weatherCondition?.DailyForecasts?[0].day?.iconPhrase ?? "")"
         self.viewWeatherDetailView.labelNightCommit.text = "Night : \(self.weatherCondition?.DailyForecasts?[0].day?.iconPhrase ?? "")"
-        
         }
     
     init (weatherCondition : ForeCastResponseModel, cityName : String){
