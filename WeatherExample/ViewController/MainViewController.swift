@@ -23,11 +23,31 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("yasin 4.yorum")
         self.searchBar.delegate = self
+
+
+        print("3.branc ilk yorum")
+        print("3.branc ikinci yorum")
+
+
+        print("yasin branchinde değişiklik yapıldı ve yasin_2 branchine eklendi")
+
+        print("yasin_2 brancinde yapılan yorum")
+
+        print("yasin_2 brancinden yapılan 2. yorum")
+        print("yasin_2 brancinden yapılan 3.yorum")
+        print("yasin 1. yorum")
+
+        print("yasin2 5.yorum")
+        print("2.branç ilk yorum")
+
+
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(MainTableViewCell.nib, forCellReuseIdentifier: MainTableViewCell.identifier)
         self.tableView.rowHeight = 44.0
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
