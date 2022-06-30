@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
 
         print("yasin_2 brancinden yapılan 2. yorum")
         print("yasin_2 brancinden yapılan 3.yorum")
+        print("yasin 1. yorum")
 
     
         self.tableView.delegate = self
