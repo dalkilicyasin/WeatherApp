@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.searchBar.delegate = self
         print("yasin_2 brancinde yapılan yorum")
+        print("yasin_2 brancinden yapılan 2. yorum")
     
         self.tableView.delegate = self
         self.tableView.dataSource = self
