@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("yasin 4.yorum")
         self.searchBar.delegate = self
 
 
@@ -38,7 +39,6 @@ class MainViewController: UIViewController {
         print("yasin_2 brancinden yapılan 3.yorum")
         print("yasin 1. yorum")
 
-    
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(MainTableViewCell.nib, forCellReuseIdentifier: MainTableViewCell.identifier)
