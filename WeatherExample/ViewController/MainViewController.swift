@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
         self.searchBar.delegate = self
 
         print("3.branc ilk yorum")
+        print("3.branc ikinci yorum")
 
 
     
