@@ -24,15 +24,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.searchBar.delegate = self
-
-        print("3.branc ilk yorum")
-
-
-    
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(MainTableViewCell.nib, forCellReuseIdentifier: MainTableViewCell.identifier)
         self.tableView.rowHeight = 44.0
+        
+        print("2.branç ilk yorum")
     }
     
     override func viewDidAppear(_ animated: Bool) {
