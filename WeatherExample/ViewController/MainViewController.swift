@@ -24,6 +24,17 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.searchBar.delegate = self
+
+
+        print("yasin branchinde değişiklik yapıldı ve yasin_2 branchine eklendi")
+
+        print("yasin_2 brancinde yapılan yorum")
+
+        print("yasin_2 brancinden yapılan 2. yorum")
+        print("yasin_2 brancinden yapılan 3.yorum")
+        print("yasin 1. yorum")
+
+    
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(MainTableViewCell.nib, forCellReuseIdentifier: MainTableViewCell.identifier)
